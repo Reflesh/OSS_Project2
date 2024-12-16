@@ -56,7 +56,7 @@ def tick():
                 start = True
             paddle.move_paddle(event)
 
-    for ball in BALLS:
+    for ball in BALLS[:]:
         if start:
             ball.move()
         else:
