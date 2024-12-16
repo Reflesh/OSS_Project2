@@ -38,8 +38,6 @@ class Block(Basic):
         # ============================================
         # TODO: Implement an event when block collides with a ball
         self.HP -= 1
-        if self.HP == 4:
-            self.color = (128, 128, 128) # 회색
         if self.HP == 3: 
             self.color = (255, 0, 0) # 주황색
         elif self.HP == 2: 
