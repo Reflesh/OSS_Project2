@@ -37,10 +37,20 @@ class Block(Basic):
     def collide(self, blocks : list, balls : list):
         # ============================================
         # TODO: Implement an event when block collides with a ball
-        
-        self.alive = False
-        blocks.remove(self) # block 삭제
-        self.new_block(balls)
+        self.HP -= 1
+        if self.HP == 4:
+            self.color = (128, 128, 128) # 회색
+        if self.HP == 3: 
+            self.color = (255, 0, 0) # 주황색
+        elif self.HP == 2: 
+            self.color = (255, 165, 0) # 노란색
+        elif self.HP == 1: 
+            self.color = (255, 255, 0) # 노란색
+
+        if self.HP == 0:
+            self.alive = False
+            blocks.remove(self) # block 삭제
+            self.new_block(balls)
         
     def new_block(self, balls: list): # 블록이 깨지면 랜덤확률로 공 생성
         # 1부터 10까지 난수 생성하여 2 이하인 경우 새로운 공 생성 -> 20% 확률
