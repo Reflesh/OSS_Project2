@@ -31,7 +31,7 @@ def create_blocks():
                 + j * (config.block_size[1] + config.spacing[1])
             )
             color_index = j % len(config.colors)
-            color = config.colors[color_index]
+            color = (128, 128, 128)
             block = Block(color, (x, y))
             BLOCKS.append(block)
 
